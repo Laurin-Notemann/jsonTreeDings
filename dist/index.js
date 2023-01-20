@@ -1,6 +1,6 @@
 function _arrayLikeToArray(arr, len) {
     if (len == null || len > arr.length) len = arr.length;
-    for (var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
+    for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
     return arr2;
 }
 function _arrayWithHoles(arr) {
@@ -20,17 +20,17 @@ function _iterableToArrayLimit(arr, i) {
     var _d = false;
     var _s, _e;
     try {
-        for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
+        for(_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true){
             _arr.push(_s.value);
             if (i && _arr.length === i) break;
         }
     } catch (err) {
         _d = true;
         _e = err;
-    } finally {
+    } finally{
         try {
             if (!_n && _i["return"] != null) _i["return"]();
-        } finally {
+        } finally{
             if (_d) throw _e;
         }
     }
@@ -194,7 +194,7 @@ function appendToTreeDiv(elementToAppend) {
     var divWIthKeyValuePair = document.createElement("div");
     var _iteratorNormalCompletion = true, _didIteratorError = false, _iteratorError = undefined;
     try {
-        for (var _iterator = Object.entries(elementToAppend)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        for(var _iterator = Object.entries(elementToAppend)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true){
             var _step_value = _slicedToArray(_step.value, 2), key = _step_value[0], value = _step_value[1];
             if (typeof value === "object") {
                 divWIthKeyValuePair.appendChild(createSubNode(key, value, layernumber));
@@ -219,12 +219,12 @@ function appendToTreeDiv(elementToAppend) {
     } catch (err) {
         _didIteratorError = true;
         _iteratorError = err;
-    } finally {
+    } finally{
         try {
             if (!_iteratorNormalCompletion && _iterator.return != null) {
                 _iterator.return();
             }
-        } finally {
+        } finally{
             if (_didIteratorError) {
                 throw _iteratorError;
             }
@@ -233,13 +233,13 @@ function appendToTreeDiv(elementToAppend) {
     return divWIthKeyValuePair;
 }
 function alignKeysAndContent() {
-    for (var i = 1; i <= numberOfLayer; i++) {
+    for(var i = 1; i <= numberOfLayer; i++){
         var _Math;
         var allKeyValuePairs = document.querySelectorAll(".layer".concat(i));
         var listOfWidths = [];
         var _iteratorNormalCompletion = true, _didIteratorError = false, _iteratorError = undefined;
         try {
-            for (var _iterator = allKeyValuePairs[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            for(var _iterator = allKeyValuePairs[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true){
                 var keyValue = _step.value;
                 if (keyValue.parentElement.className === "keyValuePair") {
                     listOfWidths.push(keyValue.parentElement.clientWidth);
@@ -248,12 +248,12 @@ function alignKeysAndContent() {
         } catch (err) {
             _didIteratorError = true;
             _iteratorError = err;
-        } finally {
+        } finally{
             try {
                 if (!_iteratorNormalCompletion && _iterator.return != null) {
                     _iterator.return();
                 }
-            } finally {
+            } finally{
                 if (_didIteratorError) {
                     throw _iteratorError;
                 }
@@ -264,7 +264,7 @@ function alignKeysAndContent() {
         var maxWidth = (_Math = Math).max.apply(_Math, _toConsumableArray(listOfWidths));
         var _iteratorNormalCompletion1 = true, _didIteratorError1 = false, _iteratorError1 = undefined;
         try {
-            for (var _iterator1 = allKeyValuePairs[Symbol.iterator](), _step1; !(_iteratorNormalCompletion1 = (_step1 = _iterator1.next()).done); _iteratorNormalCompletion1 = true) {
+            for(var _iterator1 = allKeyValuePairs[Symbol.iterator](), _step1; !(_iteratorNormalCompletion1 = (_step1 = _iterator1.next()).done); _iteratorNormalCompletion1 = true){
                 var keyValue1 = _step1.value;
                 if (keyValue1.parentElement.className === "keyValuePair") {
                     keyValue1.parentElement.style.width = "".concat(maxWidth, "px");
@@ -279,12 +279,12 @@ function alignKeysAndContent() {
         } catch (err) {
             _didIteratorError1 = true;
             _iteratorError1 = err;
-        } finally {
+        } finally{
             try {
                 if (!_iteratorNormalCompletion1 && _iterator1.return != null) {
                     _iterator1.return();
                 }
-            } finally {
+            } finally{
                 if (_didIteratorError1) {
                     throw _iteratorError1;
                 }
@@ -295,7 +295,7 @@ function alignKeysAndContent() {
 function main() {
     showTreeDiv === null || showTreeDiv === void 0 ? void 0 : showTreeDiv.appendChild(appendToTreeDiv(test2));
     alignKeysAndContent();
-    //console.log(numberOfLayer)
+//console.log(numberOfLayer)
 }
 // document.addEventListener("mousemove", e => { 
 //     //@ts-ignore
@@ -304,19 +304,27 @@ function main() {
 //     console.log(e)
 // })
 main();
-
-const treeContainerEl = document.querySelector(`[data-showTree="showTree"]`)
-
-const scrollSpeed = 1
-
-window.addEventListener("wheel", (e) => {
-
-    const oldTop = parseInt(treeContainerEl.style.top.replace("px", ""))
-    const oldLeft = parseInt(treeContainerEl.style.left.replace("px", ""))
-
-    const newTop = (oldTop + e.wheelDeltaY) * scrollSpeed
-    const newLeft = (oldLeft + e.wheelDeltaX) * scrollSpeed
-
-    treeContainerEl.style.top = newTop + "px"
-    treeContainerEl.style.left = newLeft + "px"
-})
+var treeContainerEl = document.querySelector('[data-showTree="showTree"]');
+var resetScrollButtonEl = document.querySelector('[data-action="resetScroll"]');
+var scrollSpeed = 1;
+var savedPosition = JSON.parse(window.localStorage.getItem("json-tree-dings:scroll-position"));
+if (savedPosition) {
+    treeContainerEl.style.top = savedPosition.x + "px";
+    treeContainerEl.style.left = savedPosition.y + "px";
+}
+window.addEventListener("wheel", function(e) {
+    var oldTop = parseInt(treeContainerEl.style.top.replace("px", ""));
+    var oldLeft = parseInt(treeContainerEl.style.left.replace("px", ""));
+    var newTop = (oldTop + e.wheelDeltaY) * scrollSpeed;
+    var newLeft = (oldLeft + e.wheelDeltaX) * scrollSpeed;
+    treeContainerEl.style.top = newTop + "px";
+    treeContainerEl.style.left = newLeft + "px";
+    window.localStorage.setItem("json-tree-dings:scroll-position", JSON.stringify({
+        x: newTop,
+        y: newLeft
+    }));
+});
+resetScrollButtonEl.addEventListener("click", function() {
+    treeContainerEl.style.top = "0px";
+    treeContainerEl.style.left = "0px";
+});

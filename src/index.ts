@@ -120,7 +120,7 @@ function createSubNode(key: any, value: any, layernumber: number) {
     subDiv.setAttribute("class", "flexboxForObjext")
     const tempP = document.createElement("div")
     const keyForTempP = document.createElement("p")
-    keyForTempP.innerHTML =`${key}`
+    keyForTempP.innerHTML = `${key}`
     const arrowForTempP = document.createElement("p")
     arrowForTempP.innerHTML = `---> `
     tempP.appendChild(keyForTempP)
@@ -206,3 +206,38 @@ function main() {
 
 
 main()
+
+
+
+const treeContainerEl = document.querySelector(`[data-showTree="showTree"]`) as HTMLDivElement
+
+const resetScrollButtonEl = document.querySelector(`[data-action="resetScroll"]`) as HTMLButtonElement
+
+const scrollSpeed = 1
+
+const savedPosition = JSON.parse(window.localStorage.getItem("json-tree-dings:scroll-position")!)
+
+if (savedPosition) {
+    treeContainerEl.style.top = savedPosition.x + "px"
+    treeContainerEl.style.left = savedPosition.y + "px"
+}
+
+window.addEventListener("wheel", (e) => {
+
+    const oldTop = parseInt(treeContainerEl.style.top.replace("px", ""))
+    const oldLeft = parseInt(treeContainerEl.style.left.replace("px", ""))
+
+    const newTop = (oldTop + e.wheelDeltaY) * scrollSpeed
+    const newLeft = (oldLeft + e.wheelDeltaX) * scrollSpeed
+
+    treeContainerEl.style.top = newTop + "px"
+    treeContainerEl.style.left = newLeft + "px"
+
+    window.localStorage.setItem("json-tree-dings:scroll-position", JSON.stringify({ x: newTop, y: newLeft }))
+})
+
+resetScrollButtonEl.addEventListener("click", () => {
+
+    treeContainerEl.style.top = "0px"
+    treeContainerEl.style.left = "0px"
+})
