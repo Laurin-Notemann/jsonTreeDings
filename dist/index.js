@@ -56,7 +56,6 @@ function _unsupportedIterableToArray(o, minLen) {
     if (n === "Map" || n === "Set") return Array.from(n);
     if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
 }
-import data from "./data";
 var testObject = {
     "layer1key1": 1,
     "layer1key2": 2,
@@ -273,6 +272,7 @@ function alignKeysAndContent() {
                 } else {
                     //@ts-ignore
                     keyValue1.style.width = "".concat(maxWidth, "px");
+                    //@ts-ignore
                     keyValue1.style.background = "lightgray";
                 }
             }
@@ -293,14 +293,14 @@ function alignKeysAndContent() {
     }
 }
 function main() {
-    showTreeDiv === null || showTreeDiv === void 0 ? void 0 : showTreeDiv.appendChild(appendToTreeDiv(data));
+    showTreeDiv === null || showTreeDiv === void 0 ? void 0 : showTreeDiv.appendChild(appendToTreeDiv(test2));
     alignKeysAndContent();
-    console.log(numberOfLayer);
+//console.log(numberOfLayer)
 }
-document.addEventListener("mousemove", function(e) {
-    //@ts-ignore
-    //document.querySelector(".showTree")!.style.left = e.detail.x 
-    //@ts-ignore
-    console.log(e);
-});
+// document.addEventListener("mousemove", e => { 
+//     //@ts-ignore
+//     //document.querySelector(".showTree")!.style.left = e.detail.x 
+//     //@ts-ignore
+//     console.log(e)
+// })
 main();

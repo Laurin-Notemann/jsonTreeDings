@@ -1,4 +1,4 @@
-import data from "./data"
+
 
 const testObject = {
     "layer1key1": 1,
@@ -192,17 +192,17 @@ function alignKeysAndContent() {
 }
 
 function main() {
-    showTreeDiv?.appendChild(appendToTreeDiv(data))
+    showTreeDiv?.appendChild(appendToTreeDiv(test2))
     alignKeysAndContent()
-    console.log(numberOfLayer)
+    //console.log(numberOfLayer)
 }
 
-document.addEventListener("mousemove", e => { 
-    //@ts-ignore
-    //document.querySelector(".showTree")!.style.left = e.detail.x 
-    //@ts-ignore
-    console.log(e)
-})
+// document.addEventListener("mousemove", e => { 
+//     //@ts-ignore
+//     //document.querySelector(".showTree")!.style.left = e.detail.x 
+//     //@ts-ignore
+//     console.log(e)
+// })
 
 
 main()
