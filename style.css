@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    padding-left: 2rem;
+    padding-top: 2rem;
+    overflow: scroll
+}
+
+.flexboxForObjext{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    white-space: nowrap; 
+    width: fit-content;
+    /* margin-top: 2px; */
+}
+
+.rest{
+    display: flex;
+    flex-direction: column;
+}
+.valuesomething{
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.keyValuePair{
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+    padding: 0.3rem;
+    width: fit-content;
+}
+
+.keyPara{
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+}
+
+.keyArrowPair{
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
